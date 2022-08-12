@@ -6,9 +6,11 @@ Project for Camunda Summer Hackdays 2022
 
 Export events from Zeebe (like incidents or process instance state changes) via UDP connection to puredata* to generate sound.
 
-*puredata is a visual programmung language for dealing with audio streams
+🔊 **HQ sound examples**: https://nextcloud.pedesen.de/s/RzTzbfawD6Rjwq5
 
 ![c8sound](https://user-images.githubusercontent.com/2543743/184417756-803acd1f-d4de-47dc-92b2-d4c9bfb1dcd4.jpg)
+
+*puredata is a visual programmung language for dealing with audio streams
 
 ## Content
 
