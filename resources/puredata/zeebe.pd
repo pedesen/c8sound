@@ -1,74 +1,135 @@
-#N canvas 3136 448 1015 704 12;
+#N canvas 2293 610 1015 704 12;
 #X obj 362 47 netreceive -u -b 1337;
 #X obj 362 89 moocow/bytes2any;
 #X obj 73 194 route process;
 #X obj 591 195 route i;
-#X obj 49 621 dac~ 1;
+#X obj 49 619 dac~ 1;
 #X obj 120 619 dac~ 2;
-#X obj 529 548 send~ dac;
+#X obj 505 494 send~ dac;
 #X obj 70 532 receive~ dac;
-#X obj 817 606 ping 1046.5 0.15;
-#X obj 815 579 ping 1108.73 0.15;
-#X obj 725 421 incident 233.08 0.05;
-#X obj 734 318 spigot;
-#X obj 717 292 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 751 341 spigot;
+#X obj 757 292 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 10
 1;
-#X obj 101 326 spigot;
-#X text 742 289 INCIDENT;
-#X obj 77 292 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 62 336 spigot;
+#X text 750 268 INCIDENT;
+#X obj 55 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 10
 1;
-#X text 814 28 ITENTS 0 CANCEL 1 SEQUENCE_FLOW_TAKEN 2 ELEMENT_ACTIVATING
-3 ELEMENT_ACTIVATED 4 ELEMENT_COMPLETING 5 ELEMENT_COMPLETED 6 ELEMENT_TERMINATING
-7 ELEMENT_TERMINATED 8 ACTIVATE_ELEMENT 9 COMPLETE_ELEMENT 10 TERMINATE_ELEMENT
-;
 #X text 494 133 Route intents;
-#X obj 568 327 spigot;
-#X obj 563 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 580 339 spigot;
+#X obj 574 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 10
 1;
-#X text 105 290 PROCESS ACTIVATED;
-#X text 580 278 PROCESS COMPLETED;
-#X obj 218 326 spigot;
-#X obj 194 292 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 53 275 PROCESS ACTIVATED;
+#X text 570 269 PROCESS COMPLETED;
+#X obj 219 321 spigot;
+#X obj 219 294 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 208 128 print event;
 #X obj 336 193 route exclusiveGateway process;
 #X obj 362 130 route 1 3 5;
 #X obj 188 193 route sequenceFlow;
-#X text 220 285 SEQUENCE FLOW TAKEN;
-#X obj 394 326 spigot;
-#X obj 370 292 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 213 270 SEQUENCE FLOW TAKEN;
+#X obj 412 321 spigot;
+#X obj 407 294 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 396 285 EXCLUSIVE GATEWAY;
-#X obj 101 413 ping 440 0.1;
-#X obj 241 413 ping 369.99 0.1;
-#X obj 400 418 ping 293.66 0.1;
-#X obj 570 421 ping 880 0.1;
+#X text 390 271 EXCLUSIVE GATEWAY;
+#X obj 142 332 vsl 15 64 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3150 1;
+#X obj 218 355 ping 369.99;
+#X obj 412 355 ping 293.66;
+#X obj 581 373 ping 880;
+#X obj 738 372 incident 233.08;
+#X obj 319 335 vsl 15 64 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3150 1;
+#X obj 506 328 vsl 15 64 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3150 1;
+#X obj 209 104 spigot;
+#X obj 248 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 60 368 ping 440;
+#X obj 666 325 vsl 15 64 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3150 1;
+#X obj 853 320 vsl 15 64 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3150 1;
+#X obj 198 357 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 41 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 392 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 560 378 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 718 378 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 141 305 r vol;
+#X obj 831 70 loadbang;
+#X obj 831 161 s vol;
+#X obj 833 128 f 10;
+#X obj 843 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 319 308 r vol;
+#X obj 506 303 r vol;
+#X obj 664 299 r vol;
+#X obj 847 295 r vol;
+#X text 532 47 Example: "5 sequenceFlow";
+#X text 546 65 5 = intent: PROCESS_COMPLETED;
+#X text 22 15 Camunda Hack Days 2022 - c8sound;
+#X text 264 74 Debug;
+#X text 29 646 Real time audio output;
+#X text 132 597 R;
+#X text 69 595 L;
+#X text 865 96 Reset;
+#X obj 28 241 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 1 0;
-#X connect 1 0 24 0;
-#X connect 1 0 26 0;
-#X connect 2 0 13 0;
-#X connect 3 0 11 0;
+#X connect 1 0 22 0;
+#X connect 1 0 35 0;
+#X connect 2 0 10 0;
+#X connect 3 0 8 0;
 #X connect 7 0 4 0;
 #X connect 7 0 5 0;
-#X connect 10 0 6 0;
-#X connect 11 0 10 0;
-#X connect 12 0 11 1;
-#X connect 13 0 32 0;
-#X connect 15 0 13 1;
-#X connect 18 0 35 0;
+#X connect 8 0 32 0;
+#X connect 8 0 44 0;
+#X connect 9 0 8 1;
+#X connect 10 0 37 0;
+#X connect 10 0 41 0;
+#X connect 12 0 10 1;
+#X connect 14 0 31 0;
+#X connect 14 0 43 0;
+#X connect 15 0 14 1;
+#X connect 18 0 29 0;
+#X connect 18 0 40 0;
 #X connect 19 0 18 1;
-#X connect 22 0 33 0;
-#X connect 23 0 22 1;
-#X connect 25 0 29 0;
-#X connect 25 1 18 0;
-#X connect 26 0 27 0;
-#X connect 26 1 2 0;
-#X connect 26 2 25 0;
-#X connect 26 3 3 0;
-#X connect 27 0 22 0;
-#X connect 29 0 34 0;
-#X connect 30 0 29 1;
+#X connect 21 0 25 0;
+#X connect 21 1 14 0;
+#X connect 22 0 23 0;
+#X connect 22 1 2 0;
+#X connect 22 2 21 0;
+#X connect 22 3 3 0;
+#X connect 23 0 18 0;
+#X connect 25 0 30 0;
+#X connect 25 0 42 0;
+#X connect 26 0 25 1;
+#X connect 28 0 37 2;
+#X connect 29 0 6 0;
+#X connect 30 0 6 0;
+#X connect 31 0 6 0;
 #X connect 32 0 6 0;
-#X connect 33 0 6 0;
-#X connect 34 0 6 0;
-#X connect 35 0 6 0;
+#X connect 33 0 29 2;
+#X connect 34 0 30 2;
+#X connect 35 0 20 0;
+#X connect 36 0 35 1;
+#X connect 37 0 6 0;
+#X connect 38 0 31 2;
+#X connect 39 0 32 1;
+#X connect 45 0 28 0;
+#X connect 45 0 12 0;
+#X connect 46 0 48 0;
+#X connect 48 0 47 0;
+#X connect 49 0 48 0;
+#X connect 50 0 33 0;
+#X connect 51 0 34 0;
+#X connect 52 0 38 0;
+#X connect 52 0 15 0;
+#X connect 53 0 39 0;
+#X connect 53 0 9 0;
+#X connect 62 0 10 0;
